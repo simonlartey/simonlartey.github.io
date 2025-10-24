@@ -216,3 +216,71 @@ header {
 
 
 
+/* ========== SECTION BACKGROUNDS ========== */
+#about {
+  background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+#skills {
+  background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+#projects {
+  background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+#contact {
+  background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+/* ========== ABOUT SECTION ========== */
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+#about img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--accent-color);
+}
+
+#about p {
+  line-height: 1.7;
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ========== SKILLS SECTION ========== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.skill {
+  font-weight: 500;
+}
+
+.bar {
+  background: #e9ecef;
+  height: 8px;
+  border-radius: 10px;
+  margin-top: 5px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 8px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  width: 0; /* Start empty for animation */
+}
