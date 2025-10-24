@@ -128,4 +128,22 @@ window.addEventListener("scroll", animateSkills);
 window.addEventListener("load", animateSkills);
 
 
+// ========== 6. Animate Projects on Scroll ==========
+const projectCards = document.querySelectorAll(".project");
+
+function animateProjects() {
+  const triggerBottom = window.innerHeight * 0.85;
+
+  projectCards.forEach((card, index) => {
+    const rect = card.getBoundingClientRect();
+    if (rect.top < triggerBottom && !card.classList.contains("visible")) {
+      setTimeout(() => {
+        card.classList.add("visible");
+      }, index * 150); // stagger each card by 150ms
+    }
+  });
+}
+
+window.addEventListener("scroll", animateProjects);
+window.addEventListener("load", animateProjects);
 
