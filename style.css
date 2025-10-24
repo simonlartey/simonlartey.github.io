@@ -316,10 +316,12 @@ header {
 
 .fill {
   height: 8px;
-  border-radius: 10px;
+  width: 0;
   background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-  width: 0; /* Start empty for animation */
+  border-radius: 10px;
+  transition: width 3s cubic-bezier(0.25, 0.1, 0.25, 1.0); /* smoother, longer easing */
 }
+
 
 
 

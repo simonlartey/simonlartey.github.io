@@ -90,4 +90,42 @@ document.querySelectorAll('.nav-links a').forEach(anchor => {
 });
 
 
+// ========== 5. Animate Skill Bars ==========
+const skillSections = document.querySelectorAll(".skill");
+
+function animateSkills() {
+  const triggerBottom = window.innerHeight * 0.85;
+  let delay = 0;
+
+  skillSections.forEach((skill, index) => {
+    const rect = skill.getBoundingClientRect();
+    if (rect.top < triggerBottom && !skill.classList.contains("visible")) {
+      skill.classList.add("visible");
+      const fill = skill.querySelector(".fill");
+      const percent = skill.dataset.skill;
+      const percentText = skill.querySelector(".skill-percent");
+
+      // Animate the bar and count up
+      setTimeout(() => {
+        fill.style.width = percent + "%";
+        let current = 0;
+        const count = setInterval(() => {
+          if (current < percent) {
+            current++;
+            percentText.textContent = current + "%";
+          } else {
+            clearInterval(count);
+          }
+        }, 20);
+      }, delay);
+
+      delay += 150; // staggered start for each skill
+    }
+  });
+}
+
+window.addEventListener("scroll", animateSkills);
+window.addEventListener("load", animateSkills);
+
+
 
