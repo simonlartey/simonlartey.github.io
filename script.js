@@ -1,5 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // ========== 1. Typing Animation ==========
+// ========== 1. Typing Animation ==========
 const typedText = document.getElementById("typed-text");
 const phrases = ["Software Engineer", "Frontend Developer", "Designer"];
 let phraseIndex = 0;
@@ -90,4 +89,5 @@ document.querySelectorAll('.nav-links a').forEach(anchor => {
   });
 });
 
-});
+
+
