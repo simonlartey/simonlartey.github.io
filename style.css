@@ -650,11 +650,7 @@ body.dark .project .overlay {
   transform: translateY(0);
 }
 
-/*  subtle zoom for hero background */
-.hero-bg {
-  background: url('images/hero-bg.jpg') center/cover no-repeat;
-  animation: zoomBg 12s ease-in-out forwards;
-}
+
 
 @keyframes zoomBg {
   from { transform: scale(1); }
@@ -722,4 +718,31 @@ body.dark .project .overlay {
 body, h1, h2, h3, p {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+/* ===== Project Scroll Animation ===== */
+.project {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.project.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delay for each card */
+.project:nth-child(1) { transition-delay: 0.2s; }
+.project:nth-child(2) { transition-delay: 0.4s; }
+.project:nth-child(3) { transition-delay: 0.6s; }
+.project:nth-child(4) { transition-delay: 0.8s; }
+
+/* Hover interaction */
+.project:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
