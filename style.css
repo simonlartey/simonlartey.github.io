@@ -34,6 +34,53 @@
     text-align: center;
   }
   
-  
+  /* ========== SECTION STYLING ========== */
+section {
+  padding: 60px 0; /* reduced for denser look */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== NAVBAR ========== */
+header {
+  background-color: var(--background-color);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 8%;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--primary-color);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
 
   
