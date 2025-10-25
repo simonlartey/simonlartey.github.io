@@ -286,21 +286,63 @@
 <!-- ======= Contact Section ======= -->
 <section id="contact">
   <div class="container">
-    <h2>Contact</h2>
-    <form id="contact-form">
-      <input type="text" id="name" name="name" placeholder="Your Name" required />
-      <input type="email" id="email" name="email" placeholder="Your Email" required />
-      <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn primary-btn">Send Message</button>
-    </form>
+    <h2>Get in Touch</h2>
+    <div class="contact-grid">
+      
+      <!-- LEFT SIDE: Professional Links -->
+      <div class="contact-info reveal-left">
+        <div class="info-box intro-card">
+          <i class="bi bi-chat-dots-fill"></i>
+          <div>
+            <h3>Let’s Connect!</h3>
+            <p>
+              I’m always open to learning, collaborating, and working on creative tech projects.  
+              Feel free to reach out through any of the platforms below!
+            </p>
+          </div>
+        </div>
 
-    <div class="socials">
-      <a href="https://github.com/simonlartey" target="_blank">GitHub</a> |
-      <a href="https://linkedin.com/in/simonlartey" target="_blank">LinkedIn</a> |
-      <a href="mailto:slartey@colby.edu">Email</a>
+        <!-- GitHub -->
+        <a href="https://github.com/simonlartey" target="_blank" class="info-box clickable">
+          <i class="bi bi-github"></i>
+          <div>
+            <h3>GitHub</h3>
+          </div>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/simon-lartey27/" target="_blank" class="info-box clickable">
+          <i class="bi bi-linkedin"></i>
+          <div>
+            <h3>LinkedIn</h3>
+          </div>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:slarte27@colby.edu" class="info-box clickable">
+          <i class="bi bi-envelope-fill"></i>
+          <div>
+            <h3>Email</h3>
+          </div>
+        </a>
+      </div>
+
+      <!-- RIGHT SIDE: Contact Form -->
+      <div class="contact-card reveal-right balanced">
+        <form id="contact-form">
+          <input type="text" id="name" name="name" placeholder="Your Name" required />
+          <input type="email" id="email" name="email" placeholder="Your Email" required />
+          <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+
     </div>
   </div>
 </section>
+
+
+
   
 
   <!-- ======= Footer ======= -->
