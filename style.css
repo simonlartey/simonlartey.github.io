@@ -380,48 +380,279 @@ header {
 }
 
 /* ========== CONTACT SECTION ========== */
-form {
+/* ===== Improved Contact Section ===== */
+#contact {
+  background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+  padding: 80px 0;
+}
+
+#contact h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+}
+
+/* Contact card container */
+.contact-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.1);
+  padding: 40px;
+  max-width: 550px;
+  margin: 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 123, 255, 0.15);
+}
+
+.contact-card form {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  max-width: 500px;
-  margin: 40px auto;
 }
 
-input, textarea {
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-family: inherit;
-  font-size: 1rem;
+.contact-card input,
+.contact-card textarea {
   width: 100%;
+  padding: 12px 15px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: #f9fafc;
+  transition: all 0.3s ease;
 }
 
-input:focus, textarea:focus {
-  border-color: var(--primary-color);
+.contact-card input:focus,
+.contact-card textarea:focus {
+  border-color: var(--accent-color);
+  background-color: #fff;
+  box-shadow: 0 0 6px rgba(0, 191, 255, 0.2);
   outline: none;
 }
 
-button {
-  align-self: center;
+.contact-card button {
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
 }
 
+.contact-card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 191, 255, 0.3);
+}
+
+/* Social Links */
 .socials {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .socials a {
   color: var(--primary-color);
   text-decoration: none;
-  margin: 0 10px;
-  font-weight: 500;
+  margin: 0 12px;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
 .socials a:hover {
   color: var(--accent-color);
 }
+
+/* Fade-in animation */
+.contact-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.contact-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+/* ===== Two-Column Contact Layout (Updated) ===== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+  margin-top: 30px;
+}
+
+/* Left side contact info */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Reusable info box style */
+.contact-info .info-box {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.contact-info .info-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 191, 255, 0.15);
+}
+
+/* Icon style */
+.contact-info .info-box i {
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  color: #fff;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  padding: 10px;
+}
+
+.contact-info .info-box h3 {
+  margin: 0;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+}
+
+.contact-info .info-box p {
+  margin: 0;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.contact-info a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* --- Intro card (top left) --- */
+.intro-card {
+  background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.08);
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.intro-card i {
+  color: var(--accent-color);
+  background: #e9f6ff;
+  padding: 12px;
+  border-radius: 50%;
+  font-size: 1.3rem;
+}
+
+.intro-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 8px;
+}
+
+.intro-card p {
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info {
+    order: 2;
+  }
+
+  .contact-card {
+    order: 1;
+  }
+}
+
+
+
+
+/* =====  Clickable Info Boxes ===== */
+
+/* Make form column visually equal */
+.contact-card.balanced {
+  max-width: 100%;
+  width: 100%;
+  padding: 50px 50px;
+  box-shadow: 0 12px 30px rgba(0, 123, 255, 0.08);
+}
+
+/* Make both sides take similar width */
+.contact-grid {
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+}
+
+/* Clickable info boxes */
+.info-box.clickable {
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-box.clickable:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.15);
+}
+
+/* Remove underline and keep text same color */
+.info-box.clickable h3 {
+  margin: 0;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.info-box.clickable i {
+  font-size: 1.4rem;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  color: #fff;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+/* Make intro card stand out a bit more */
+.intro-card {
+  background: linear-gradient(135deg, #f3f8ff 0%, #ffffff 100%);
+  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.08);
+}
+
+/* Responsive Fix */
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card.balanced {
+    padding: 40px 30px;
+  }
+}
+
 
 
 /* ========== FOOTER ========== */
