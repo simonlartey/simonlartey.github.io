@@ -152,9 +152,38 @@ function animateProjects() {
 window.addEventListener("scroll", animateProjects);
 window.addEventListener("load", animateProjects);
 
+// ========== 8. Contact Form Mailto ==========
+const contactForm = document.getElementById("contact-form");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    const firstName = name.split(" ")[0];
+
+    const subject = encodeURIComponent(`Portfolio message from ${name}`);
+
+    const body = encodeURIComponent(
+      `Hi Simon,\n\n` +
+      `${message}\n\n` +
+      `Best,\n` +
+      `${firstName}\n\n` +
+      `Contact email: ${email}`
+    );
+
+    window.location.href = `mailto:slarte27@colby.edu?subject=${subject}&body=${body}`;
+  });
+}
+
 // ========== Dynamic Footer Year ==========
 const yearElement = document.getElementById("year");
 
 if (yearElement) {
   yearElement.textContent = new Date().getFullYear();
 }
+
+
