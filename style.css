@@ -295,34 +295,159 @@ header {
 }
 
 /* ========== SKILLS SECTION ========== */
+#skills {
+  background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+  padding: 90px 0;
+}
+
+#skills h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+#skills .container::after {
+  content: "A snapshot of the languages, tools, and engineering practices I use to build full-stack and AI-integrated applications.";
+  display: block;
+  max-width: 720px;
+  margin: 0 auto 45px;
+  text-align: center;
+  color: #555;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
+  gap: 24px;
   margin-top: 30px;
 }
 
-.skill {
-  font-weight: 500;
-}
-
-.bar {
-  background: #e9ecef;
-  height: 8px;
-  border-radius: 10px;
-  margin-top: 5px;
+.skill-group {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid rgba(0, 123, 255, 0.08);
+  border-radius: 18px;
+  padding: 26px 24px;
+  min-height: 210px;
+  box-shadow: 0 10px 28px rgba(0, 123, 255, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   overflow: hidden;
 }
 
-.fill {
-  height: 8px;
-  width: 0;
+.skill-group::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
   background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-  border-radius: 10px;
-  transition: width 3s cubic-bezier(0.25, 0.1, 0.25, 1.0); /* smoother, longer easing */
 }
 
+.skill-group:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 35px rgba(0, 191, 255, 0.16);
+  border-color: rgba(0, 207, 255, 0.35);
+}
 
+.skill-group h3 {
+  text-align: left;
+  color: var(--text-color);
+  font-size: 1.15rem;
+  margin-bottom: 18px;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tags span {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+  border: 1px solid rgba(0, 123, 255, 0.12);
+  color: #243447;
+  font-size: 0.88rem;
+  font-weight: 500;
+  line-height: 1;
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.skill-tags span:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  color: #ffffff;
+}
+
+/* Dark mode support for skills */
+body.dark #skills {
+  background: linear-gradient(180deg, #121212 0%, #1a1a1a 100%);
+}
+
+body.dark #skills .container::after {
+  color: #cfcfcf;
+}
+
+body.dark .skill-group {
+  background: #1e1e1e;
+  border-color: rgba(0, 207, 255, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 191, 255, 0.08);
+}
+
+body.dark .skill-tags span {
+  background: #2a2d31;
+  border-color: #3a3f45;
+  color: #e4e4e4;
+}
+
+/* Responsive skills layout */
+@media (max-width: 1000px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-group {
+    min-height: auto;
+  }
+}
+
+/* Skill card staggered reveal animation */
+.skill-group.reveal-up:nth-child(1) {
+  transition-delay: 0.05s;
+}
+
+.skill-group.reveal-up:nth-child(2) {
+  transition-delay: 0.12s;
+}
+
+.skill-group.reveal-up:nth-child(3) {
+  transition-delay: 0.19s;
+}
+
+.skill-group.reveal-up:nth-child(4) {
+  transition-delay: 0.26s;
+}
+
+.skill-group.reveal-up:nth-child(5) {
+  transition-delay: 0.33s;
+}
+
+.skill-group.reveal-up:nth-child(6) {
+  transition-delay: 0.40s;
+}
 
 
 /* ========== PROJECTS SECTION ========== */
