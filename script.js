@@ -147,3 +147,9 @@ function animateProjects() {
 window.addEventListener("scroll", animateProjects);
 window.addEventListener("load", animateProjects);
 
+// ========== Dynamic Footer Year ==========
+const yearElement = document.getElementById("year");
+
+if (yearElement) {
+  yearElement.textContent = new Date().getFullYear();
+}
