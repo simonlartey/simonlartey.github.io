@@ -1,6 +1,11 @@
 // ========== 1. Typing Animation ==========
 const typedText = document.getElementById("typed-text");
-const phrases = ["Full-Stack Engineer", "Backend-Focused Problem Solver", "Systems Designer", "Product Engineer"];
+const phrases = [
+  "Full-Stack Developer",
+  "Backend-Focused Engineer",
+  "AI-Integrated Product Builder",
+  "Data-Driven Problem Solver"
+];
 let phraseIndex = 0;
 let letterIndex = 0;
 let isDeleting = false;
