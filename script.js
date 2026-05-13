@@ -96,7 +96,7 @@ document.querySelectorAll('.nav-links a').forEach(anchor => {
 
 
 
-// ========== 6. Animate Projects on Scroll ==========
+// ========== 5. Animate Projects on Scroll ==========
 const projectCards = document.querySelectorAll(".project");
 
 function animateProjects() {
@@ -115,7 +115,7 @@ function animateProjects() {
 window.addEventListener("scroll", animateProjects);
 window.addEventListener("load", animateProjects);
 
-// ========== 8. Contact Form Mailto ==========
+// ========== 6. Contact Form Mailto ==========
 const contactForm = document.getElementById("contact-form");
 
 if (contactForm) {
@@ -142,7 +142,7 @@ if (contactForm) {
   });
 }
 
-// ========== Dynamic Footer Year ==========
+// ========== 7. Dynamic Footer Year ==========
 const yearElement = document.getElementById("year");
 
 if (yearElement) {
