@@ -1036,7 +1036,7 @@ body, section, header, .contact-card, .info-box, footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 50px;
 }
 
@@ -1164,6 +1164,9 @@ body, section, header, .contact-card, .info-box, footer {
   transform: translateY(40px);
   opacity: 0;
   transition: all 1s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .about-info.visible {
@@ -1208,6 +1211,10 @@ body.dark .interests p {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
   margin-top: 30px;
+}
+
+.about-facts {
+  margin-top: 40px;
 }
 
 .info-box {
